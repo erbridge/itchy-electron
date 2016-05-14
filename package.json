@@ -1,0 +1,27 @@
+{
+  "name": "itchy-electron",
+  "version": "0.1.0",
+  "description": "Package your Electron games for itch.io",
+  "repository": "erbridge/itchy-electron",
+  "author": "Felix Laurie von Massenbach <felix@erbridge.co.uk> (http://erbridge.co.uk/)",
+  "license": "MIT",
+  "bin": {
+    "itchy": "./bin/itchy.js"
+  },
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "electron-packager": "^7.0.1",
+    "liftoff": "^2.2.1",
+    "meow": "^3.7.0",
+    "semver-regex": "^1.0.0",
+    "update-notifier": "^0.7.0",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^2.10.1"
+  }
+}

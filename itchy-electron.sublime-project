@@ -1,0 +1,26 @@
+{
+  "folders":
+  [
+    {
+      "path": "."
+    }
+  ],
+  "settings":
+  {
+    "translate_tabs_to_spaces": true,
+    "tab_size": 2
+  },
+  "SublimeLinter":
+  {
+    "linters":
+    {
+      "jscs": {
+        "@disable": true
+      },
+
+      "jshint": {
+        "@disable": true
+      }
+    }
+  }
+}
