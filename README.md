@@ -24,6 +24,8 @@ or globally:
 $ npm install -g itchy-electron
 ```
 
+Publishing also relies on [`bulter`](https://github.com/itchio/butler), which needs to be manually installed.
+
 
 ## Usage
 
