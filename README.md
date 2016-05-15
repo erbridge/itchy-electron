@@ -79,7 +79,7 @@ The app source directory. Defaults to the current directory.
 
 ##### `appVersion`
 
-The release version of the application. Maps to the `ProductVersion` metadata property on Windows, and `CFBundleShortVersionString` on OS X.
+The release version of the application. Maps to the `ProductVersion` metadata property on Windows, and `CFBundleShortVersionString` on OS X. Defaults to the `version` from the `package.json`.
 
 
 ##### `buildDir`
@@ -89,7 +89,7 @@ The directory to save builds into. Defaults to `./build`.
 
 ##### `buildVersion`
 
-The build version of the application. Maps to the `FileVersion` metadata property on Windows, and `CFBundleVersion` on OS X.
+The build version of the application. Maps to the `FileVersion` metadata property on Windows, and `CFBundleVersion` on OS X. Defaults to `appVersion`.
 
 
 ##### `electronVersion`
