@@ -36,7 +36,6 @@ const cli = meow(
 
     ${chalk.yellow('--config=<path/to/config/file>')}    Specify the config file to use
     ${chalk.yellow('--cwd=<path/to/app/dir>')}           Specify the working directory
-    ${chalk.yellow('--out=<path/to/output/dir>')}        Specify the output path
     ${chalk.yellow('--help')}                            Display this help message
   `,
   {}
@@ -58,7 +57,6 @@ ItchyElectron.launch(
     cwd:         cli.flags.cwd,
     configPath:  cli.flags.config,
     completion:  cli.flags.completion,
-    outPath:     cli.flags.out,
   },
   function invoke(env) {
     if (shell.pwd() !== env.cwd) {
