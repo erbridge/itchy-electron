@@ -7,6 +7,7 @@ const path = require('path');
 const chalk          = require('chalk');
 const Liftoff        = require('liftoff');
 const meow           = require('meow');
+const shell          = require('shelljs');
 const updateNotifier = require('update-notifier');
 const winston        = require('winston');
 
@@ -60,8 +61,8 @@ ItchyElectron.launch(
     outPath:     cli.flags.out,
   },
   function invoke(env) {
-    if (process.cwd() !== env.cwd) {
-      process.chdir(env.cwd);
+    if (shell.pwd() !== env.cwd) {
+      shell.cd(env.cwd);
     }
 
     let appPackage;

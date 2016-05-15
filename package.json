@@ -18,6 +18,7 @@
     "liftoff": "^2.2.1",
     "meow": "^3.7.0",
     "semver-regex": "^1.0.0",
+    "shelljs": "^0.7.0",
     "update-notifier": "^0.7.0",
     "winston": "^2.2.0"
   },
