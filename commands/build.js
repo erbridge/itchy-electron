@@ -5,9 +5,7 @@ const packager    = require('electron-packager');
 const semverRegex = require('semver-regex');
 const winston     = require('winston');
 
-const getProductName = function getProductName(config, appPackage) {
-  return config.productName || appPackage.name || 'untitled';
-};
+const utils = require('./utils');
 
 const getElectronVersion = function getElectronVersion(config, appPackage) {
   let electronVersion = config.electronVersion;
@@ -44,39 +42,8 @@ const getElectronVersion = function getElectronVersion(config, appPackage) {
   return electronVersion;
 };
 
-const getAppVersion = function getAppVersion(config, appPackage) {
-  return config.appVersion || appPackage.version;
-};
-
-const getBuildVersion = function getBuildVersion(config, appPackage) {
-  return config.buildVersion || getAppVersion(config, appPackage);
-};
-
 const getAppDir = function getAppDir(config) {
   return config.appDir || '.';
-};
-
-const getBuildDir = function getBuildDir(config) {
-  return config.buildDir || './build';
-};
-
-const getBuildTargetConfig = function getBuildTargetConfig(buildTarget) {
-  const buildTargets = {
-    linux: {
-      platform: 'linux',
-      arch:     'x64',
-    },
-    osx: {
-      platform: 'darwin',
-      arch:     'x64',
-    },
-    win32: {
-      platform: 'win32',
-      arch:     'ia32',
-    },
-  };
-
-  return buildTargets[buildTarget];
 };
 
 module.exports = function build(buildTarget, config, appPackage) {
@@ -90,18 +57,18 @@ module.exports = function build(buildTarget, config, appPackage) {
     throw new Error('A build target must be specified');
   }
 
-  const buildTargetConfig = getBuildTargetConfig(buildTarget);
+  const buildTargetConfig = utils.getBuildTargetConfig(buildTarget);
 
   const packagerConfig = {
     dir:      getAppDir(config),
     platform: buildTargetConfig.platform,
     arch:     buildTargetConfig.arch,
 
-    name:            getProductName(config, appPackage),
-    'app-version':   getAppVersion(config, appPackage),
-    'build-version': getBuildVersion(config, appPackage),
+    name:            utils.getProductName(config, appPackage),
+    'app-version':   utils.getAppVersion(config, appPackage),
+    'build-version': utils.getBuildVersion(config, appPackage),
 
-    out: getBuildDir(config),
+    out: utils.getBuildDir(config),
 
     // TODO: Make these command flags.
     asar:      true,

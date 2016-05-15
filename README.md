@@ -40,7 +40,7 @@ $ itchy help
 
 *Itchy Electron* uses configuration files over command line arguments. To configure it, either add an object to your `package.json` called `itchyElectron`, or create a JavaScript or JSON file called `.itchyelectronrc`, `.itchyelectron.js`, or `.itchyelectron.json` (whatever takes your preference).
 
-The only "required" option is `electronVersion` (although it is inherited from the `package.json` if possible - see below for more details).
+The only "required" options are `electronVersion` (which is inherited from the `package.json` if possible - see below for more details) and `itchTargets`.
 
 A minimal `package.json` configuration looks like this:
 
@@ -50,7 +50,10 @@ A minimal `package.json` configuration looks like this:
   "version": "0.1.0",
   "itchyElectron": {
     "productName": "Example",
-    "appDir": "./app"
+    "appDir": "./app",
+    "itchTargets": {
+      "release": "erbridge/example"
+    }
   },
   "devDependencies": {
     "electron-prebuilt": "1.0.2",
@@ -65,7 +68,11 @@ or `.itchyelectron.json`:
 {
   "productName": "Example",
   "appVersion": "0.1.0",
-  "electronVersion": "1.0.2"
+  "electronVersion": "1.0.2",
+  "itchTargets": {
+    "beta": "erbridge/example-beta",
+    "release": "erbridge/example"
+  }
 }
 ```
 
@@ -101,6 +108,11 @@ Accepted packages are:
  - `electron`
  - `electron-prebuilt`
  - `electron-prebuilt-compile`
+
+
+##### `itchTargets`
+
+An object of key value pairs of target to project, used for publishing.
 
 
 ##### `productName`

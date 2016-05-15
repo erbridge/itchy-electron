@@ -32,6 +32,11 @@ const cli = meow(
 
     ${chalk.green('help')}                              Display this help message
 
+    ${chalk.green('publish')} ${chalk.magenta('<target>')} ${chalk.magenta('<build>')}          Publish a build to itch.io
+
+        ${chalk.magenta('<target>')}                      One of the targets specified in the config
+        ${chalk.magenta('<build>')}                       Valid targets are ${chalk.bold('linux')}, ${chalk.bold('osx')}, or ${chalk.bold('win32')}
+
   Options:
 
     ${chalk.yellow('--config=<path/to/config/file>')}    Specify the config file to use
@@ -85,6 +90,9 @@ ItchyElectron.launch(
           break;
         case 'help':
           cli.showHelp();
+          break;
+        case 'publish':
+          commands.publish(cli.input[1], cli.input[2], config, appPackage);
           break;
         default:
           throw new Error('Unrecognized command');
