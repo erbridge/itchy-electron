@@ -50,7 +50,7 @@ module.exports = function publish(targetName, buildName, config, appPackage) {
   const target = getTarget(targetName, buildName, config);
   const buildPath = getBuildPath(buildName, config, appPackage);
 
-  command = `${command} ${buildPath} ${target.project}:${target.channel}`;
+  command = `${command} "${buildPath}" ${target.project}:${target.channel}`;
 
   shell.exec(command, { async: true });
 };
