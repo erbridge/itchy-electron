@@ -1,6 +1,6 @@
 {
   "name": "itchy-electron",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Package your Electron games for itch.io",
   "repository": "erbridge/itchy-electron",
   "author": "Felix Laurie von Massenbach <felix@erbridge.co.uk> (http://erbridge.co.uk/)",
