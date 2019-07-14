@@ -29,7 +29,7 @@ Publishing also relies on [`butler`](https://github.com/itchio/butler), which ne
 
 ## Usage
 
-Once installed, *Itch Electron* is used through the CLI tool `itchy`.
+Once installed, *Itchy Electron* is used through the CLI tool `itchy`.
 
 Refer to the help for an up to date command reference:
 
