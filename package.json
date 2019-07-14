@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "description": "Package your Electron games for itch.io",
   "repository": "erbridge/itchy-electron",
-  "author": "Felix Laurie von Massenbach <felix@erbridge.co.uk> (http://erbridge.co.uk/)",
+  "author": "erbridge <f@erbridge.co.uk> (https://erbridge.co.uk)",
   "license": "MIT",
   "bin": {
     "itchy": "./bin/itchy.js"
