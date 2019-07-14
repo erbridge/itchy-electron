@@ -8,10 +8,6 @@
   "bin": {
     "itchy": "./bin/itchy.js"
   },
-  "scripts": {
-    "test": "npm run lint",
-    "lint": "eslint ."
-  },
   "dependencies": {
     "chalk": "^1.1.3",
     "electron-packager": "^7.0.1",
@@ -21,8 +17,5 @@
     "shelljs": "^0.7.0",
     "update-notifier": "^0.7.0",
     "winston": "^2.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^2.10.1"
   }
 }
